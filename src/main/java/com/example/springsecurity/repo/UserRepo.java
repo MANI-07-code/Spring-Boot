@@ -8,5 +8,6 @@ import com.example.springsecurity.entity.Users;
 @Repository 
 public interface UserRepo extends JpaRepository<Users,Integer>{
     
+    
     Users findByName(String name);
 }
