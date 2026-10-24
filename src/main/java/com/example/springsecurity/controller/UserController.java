@@ -16,7 +16,7 @@ public class UserController {
 
 
     @Autowired
-    private UserService UserService;
+    private UserService userService;
 
 
     @GetMapping ("/user")
@@ -27,7 +27,12 @@ public class UserController {
     @PostMapping("/register")
     public String postuser(@RequestBody Users user){
          
-        return UserService.register(user);
+        return userService.register(user);
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody Users user){
+return userService.verifyUser(user);
     }
     
 }
